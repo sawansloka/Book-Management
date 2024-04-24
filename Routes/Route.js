@@ -15,7 +15,7 @@ function defineRoutes(app, preAuthRoutes, postAuthRoutes) {
     });
 
     // Token verification middleware
-    const verifyToken = require("../middleware/verifyToken");
+    const verifyToken = require("../Middleware/verifyToken");
     router.use(verifyToken);
 
     // Define post-auth routes
