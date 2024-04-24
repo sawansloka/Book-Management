@@ -33,7 +33,7 @@ This project is a Book Management System designed to help users manage their boo
 For detailed documentation, please refer to the [Project Proposal Document]([Tech Doc](https://docs.google.com/document/d/1VN3ZZLOhlTbNQnToNKs6BFdVNkoJnXGp2z9U9StR2ko/edit?usp=sharing)).
 
 ## Flow Diagram
-![Flow Diagram]([Architecture](https://drive.google.com/file/d/1V1mk3-SFum74OpPqhHxOppJ8ct1qY5Z1/view?usp=sharing))
+([Architecture](https://drive.google.com/file/d/1V1mk3-SFum74OpPqhHxOppJ8ct1qY5Z1/view?usp=sharing))
 
 ## Postman Collection
 [Postman Collection]([Postman collection](https://www.postman.com/descent-module-cosmologist-51137549/workspace/book-management-system/collection/21309452-d87f1395-b436-44b4-9b87-0a99e517a7ca?action=share&creator=21309452))
