@@ -9,6 +9,17 @@ async function addBook(req, res) {
             return res.status(400).json({ message: 'Please provide all fields' });
         }
 
+        // Validate author format
+        const authorRegex = /^[a-zA-Z\s]*$/;
+        if (!authorRegex.test(author)) {
+            return res.status(400).json({ message: 'Invalid author format' });
+        }
+
+        // Validate publication year format
+        if (!Number.isInteger(publicationYear) || publicationYear <= 0) {
+            return res.status(400).json({ message: 'Invalid publication year' });
+        }
+
         // Check if the book already exists
         const existingBook = await Book.findOne({ title, author, publicationYear });
         if (existingBook) {
@@ -37,6 +48,18 @@ async function getFilterBooks(req, res) {
             return res.status(400).json({ message: 'Provide at least one filter' });
         }
 
+
+        // Validate author format
+        const authorRegex = /^[a-zA-Z\s]*$/;
+        if (author && !authorRegex.test(author)) {
+            return res.status(400).json({ message: 'Invalid author format' });
+        }
+
+        // Validate publication year format
+        if (publicationYear && (!Number.isInteger(parseInt(publicationYear)) || parseInt(publicationYear) <= 0)) {
+            return res.status(400).json({ message: 'Invalid publication year' });
+        }
+
         // Construct filter object based on provided filters
         const filter = {};
         if (author) filter.author = author;
@@ -59,6 +82,17 @@ async function updateBook(req, res) {
 
         if (!title && !author && !publicationYear) {
             return res.status(400).json({ message: 'Provide at least one field to update' });
+        }
+
+        // Validate author format
+        const authorRegex = /^[a-zA-Z\s]*$/;
+        if (!authorRegex.test(author)) {
+            return res.status(400).json({ message: 'Invalid author format' });
+        }
+
+        // Validate publication year format
+        if (!Number.isInteger(publicationYear) || publicationYear <= 0) {
+            return res.status(400).json({ message: 'Invalid publication year' });
         }
 
         // Find and update the book by ID
