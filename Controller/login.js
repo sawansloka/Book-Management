@@ -10,7 +10,19 @@ async function loginUser(req, res) {
     try {
         // Check if both email and password are provided
         if (!email || !password) {
-            return res.status(400).json({ message: 'Please provide both email and password' });
+            return res.status(400).json({ message: 'Provide both email and password' });
+        }
+
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            return res.status(400).json({ message: 'Invalid email format' });
+        }
+
+        // Validate password format
+        const passwordRegex = /^[a-zA-Z0-9!@#$%^&*]*$/;
+        if (!passwordRegex.test(password)) {
+            return res.status(400).json({ message: 'Invalid password format' });
         }
 
         // Find user by email in the database
