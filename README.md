@@ -40,3 +40,5 @@ For detailed documentation, please refer to the [Project Proposal Document]([Tec
 
 ## Deployment
 This application is hosted on [Book-Management](https://book-management-lwlg.onrender.com).
+
+## Note: Due to inactivity of URL for so long will cause delay of 50-60 seconds for the first time (Render free service issue)
